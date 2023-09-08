@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+
 
 const server = express();
 
@@ -10,7 +12,7 @@ const routes = require('./routes')
 server.use(express.json());
 server.use('/api/v1', routes);
 
-const URI_MONGO = 'mongodb+srv://root:Id7i7ut950703.@cluster.fospwsr.mongodb.net/myTasks?retryWrites=true&w=majority';
+const URI_MONGO = process.env.MONGO_URI;
 
 const mongoConnect =  async () => {
     try {
