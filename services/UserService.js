@@ -4,4 +4,11 @@ const createUser = async (user) => {
     return await User.create(user);
 }
 
-module.exports = createUser;
+const findUser = async (user) => {
+    return await User.findOne(user);
+}
+
+module.exports = {
+    createUser,
+    findUser
+};

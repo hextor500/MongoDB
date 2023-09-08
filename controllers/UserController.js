@@ -1,5 +1,6 @@
 const {
     createUser,
+    findUser
 } = require('../services/UserService');
 
 module.exports = {
@@ -14,4 +15,6 @@ module.exports = {
             return res.status(500).send('Hubo un error');
         });
     }
+
+    
 };
